@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-project
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stock-project
+  template:
+    metadata:
+      labels:
+        app: stock-project
+    spec:
+      containers:
+      - name: stock-project
+        image: phegley/stock:latest
+        ports:
+        - containerPort: 8082
