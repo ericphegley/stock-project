@@ -23,7 +23,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/stock-project-*.jar /app/stock-project.jar
+COPY --from=build /app/target/stock-ms-0.0.1-SNAPSHOT.jar /app/stock-project.jar
 
 # Expose the port your app runs on (replace with your actual port)
 EXPOSE 8082
